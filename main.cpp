@@ -1,3 +1,6 @@
+// Compile: g++ main.cpp binary_converter.cpp -o convert
+// Run: ./convert
+
 #include <iostream>
 #include "binary_converter.h"
 
