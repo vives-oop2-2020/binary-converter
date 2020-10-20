@@ -17,7 +17,7 @@ int main() {
 
   BinaryConverter converter;
 
-  std::string binary = request_binary();
+  std::string binary = converter.cleanup_binary(request_binary());
   int decimal = converter.binary_to_decimal(binary);
   cout << "Binary \"" << binary << "\" is equal to " << decimal << " in decimal " << endl;
 
