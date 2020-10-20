@@ -6,20 +6,24 @@
 
 using namespace std;
 
+std::string request_binary(void) {
+  cout << "Please enter a binary value: ";
+  std::string binary;
+  getline(cin, binary);     // Read a full line (can contain spaces)
+  return binary;
+}
+
 int main() {
 
   BinaryConverter converter;
 
-  int decimal = converter.binary_to_decimal("0000 0001");
+  std::string binary = request_binary();
+  int decimal = converter.binary_to_decimal(binary);
+  cout << "Binary \"" << binary << "\" is equal to " << decimal << " in decimal " << endl;
 
-  cout << "The result is " << decimal << endl;
-
-  cout << '0' << ": " << (int)'0' << endl;
-  cout << '1' << ": " << (int)'1' << endl;
-  cout << ('1' - '0') << endl;
-
-  std::string binary = converter.decimal_to_binary(130);
-  cout << binary << endl;
+  decimal = 130;
+  binary = converter.decimal_to_binary(decimal);
+  cout << "Decimal " << decimal << " is equal to \"" << binary << "\" in binary " << endl;
 
   return 0;
 }
